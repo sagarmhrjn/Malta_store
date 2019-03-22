@@ -1,0 +1,26 @@
+{% extends 'store/base.html' %}
+
+{% block content %}
+
+<!-- Page Content -->
+<div class="row">
+    <div class="col-lg-9">
+        <div class="card mt-4">
+            <img class="card-img-top img-fluid" src="{{item.imglink}}" alt="">
+            <div class="card-body">
+                {% if request.user.is_authenticated %}
+                <a class="btn btn-danger btn-sm m-1 float-right" href="{% url 'product-delete' item.pk %}">Delete</a>
+                <a class="btn btn-secondary btn-sm m-1 float-right" href="{% url 'product-edit' item.pk %}">Update</a>
+                {% endif %}
+                <h3 class="card-title">{{item.name}}</h3>
+                <h4>${{item.price}}</h4>
+                <p class="card-text">{{item.description}}</p>
+                <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
+                4.0 stars
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}

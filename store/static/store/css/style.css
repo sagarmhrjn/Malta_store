@@ -1,0 +1,55 @@
+/*!
+ * Start Bootstrap - Shop Homepage (https://startbootstrap.com/template-overviews/shop-homepage)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-shop-homepage/blob/master/LICENSE)
+ */
+body {
+  padding-top: 56px;
+}
+
+a.navbar-brand{
+  font-family: 'Lobster', cursive;
+}
+
+.body{
+  margin-bottom: 60px;
+}
+h2{
+  font-family: 'Lobster', cursive;
+  text-align: center;
+  margin: 30px;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 5px;
+  background-color: #000;
+}
+.centered-form{
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+h3.panel-title{
+  margin-bottom: 15px;
+}
+
+.centerdiv{
+width: 45%;
+margin-left: auto;
+margin-right: auto;
+text-align: center;
+}
+
+.imgscale{
+    max-width: 100px;
+    max-height: 100px;
+}
+
+ a:hover{
+  text-decoration: none;
+}

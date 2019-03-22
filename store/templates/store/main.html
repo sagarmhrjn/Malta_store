@@ -1,0 +1,28 @@
+{% extends 'store/base.html' %}
+
+{% block content %}
+<div class="row">
+	{% for prod in store_items %}
+	<div class="col-lg-3 col-md-6 mb-4">
+		<div class="card h-100">
+			<a href="{{prod.imglink}}"><img class="card-img-top" src="{{prod.imglink}}" style="height:200px;"
+					alt="pic of {{prod.name}}"></a>
+			<div class="card-body">
+				<h4 class="card-title">
+					<a href="{% url 'product-details' prod.id %}">{{prod.name}}</a>
+				</h4>
+				<h5>${{prod.price}}</h5>
+				<p class="card-text" style="height:100px;">{{prod.description|striptags|truncatechars:120}}</p> <a
+					href="{% url 'product-details' prod.id %}">Read More..</a>
+			</div>
+			<div class="card-footer">
+				<form method="post">
+					{% csrf_token %}
+					<input type="submit" value="Add to Cart" class="btn btn-success">
+					<input type="hidden" name="obj_id" value={{prod.id}} />
+				</form>
+			</div>
+		</div>
+	</div>
+	{% endfor %}
+	{% endblock content %}

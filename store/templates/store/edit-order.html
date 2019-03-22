@@ -1,0 +1,53 @@
+{% extends 'store/base.html' %}
+
+
+{% block content %}
+<h3 style="text-align:center">Orders:</h3>
+<div class="container mb-4">
+    <div class="row">
+        <div class="col-12">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead style="text-align:center;">
+                        <tr>
+                            <th>ID.</th>
+                            <th scope="col">Products </th>
+                            <th scope="col">Firstname</th>
+                            <th>Lastname</th>
+                            <th scope="col">Address</th>
+                            <th>City</th>
+                            <th scope="col">Payment</th>
+                            <th scope="col">Fulfilled</th>
+                            <th>Action </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <form method="POST">
+                                {% csrf_token %}
+                                <td> <input type="text" class="form-control" value="{{order.id}}" name="id_items"></td>
+                                <td> <input type="text" class="form-control" value="{{order.items}}" name="items"></td>
+                                <td><input type="text" class="form-control" value="{{order.first_name}}"
+                                        name="first_name"></td>
+                                <td class=" text-right"><input type="text" class="form-control"
+                                        value="{{order.last_name}}" name="last_name"></td>
+                                <td class=" text-right"><input type="text" class="form-control"
+                                        value="{{order.address}}" name="address"></td>
+                                <td><input type="text" class="form-control" value="{{order.city}}" name="city">
+                                </td>
+                                <td class=" text-right"><input type="text" class="form-control"
+                                        value="{{order.payment_method}}" name="payment_method"></td>
+                                <td><input type="text" class="form-control" value="{{order.fulfilled}}"
+                                        name="fulfilled">
+                                </td>
+                                <td class="text-right">
+                                    <button type="submit" class="btn btn-primary">Edit</button>
+                                </td>
+                            </form>
+                        </tr>
+                    </tbody>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
